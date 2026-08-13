@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="MedUMM">
+  <defs>
+    <linearGradient id="g" x1="8" y1="8" x2="56" y2="56" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1d88a8"/>
+      <stop offset="1" stop-color="#36b37e"/>
+    </linearGradient>
+  </defs>
+  <path fill="url(#g)" d="M32 3 57 17v30L32 61 7 47V17z"/>
+  <path fill="#fff" d="M28 14h8v14h14v8H36v14h-8V36H14v-8h14z"/>
+</svg>
+

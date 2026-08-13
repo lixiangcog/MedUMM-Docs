@@ -1,0 +1,66 @@
+:root {
+  --medumm-navy: #15344a;
+  --medumm-blue: #1d88a8;
+  --medumm-green: #36b37e;
+  --medumm-paper: #f6fafb;
+}
+
+.wy-side-nav-search,
+.wy-nav-top {
+  background: linear-gradient(135deg, var(--medumm-navy), var(--medumm-blue));
+}
+
+.wy-side-nav-search > a img.logo {
+  width: 56px;
+  height: 56px;
+}
+
+.wy-menu-vertical header,
+.wy-menu-vertical p.caption {
+  color: #68d5bd;
+}
+
+.rst-content h1,
+.rst-content h2,
+.rst-content h3 {
+  color: var(--medumm-navy);
+}
+
+.rst-content a {
+  color: #0d728f;
+}
+
+.sd-card {
+  border: 1px solid #d7e6ea;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgb(21 52 74 / 8%);
+}
+
+.sd-card-title {
+  color: var(--medumm-navy);
+  font-weight: 700;
+}
+
+.medumm-hero {
+  padding: 1.4rem 1.6rem;
+  border-left: 5px solid var(--medumm-green);
+  background: linear-gradient(120deg, #eef8fa, var(--medumm-paper));
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+}
+
+.validation-badge {
+  display: inline-block;
+  padding: .12rem .5rem;
+  border-radius: 999px;
+  background: #e7f7f0;
+  color: #126b50;
+  font-size: .85em;
+  font-weight: 700;
+}
+
+table.docutils td,
+table.docutils th {
+  white-space: normal;
+}
+
