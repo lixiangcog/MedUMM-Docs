@@ -4,6 +4,8 @@ This repository is the independently versioned documentation site for
 [MedUMM](https://github.com/lixiangcog/MedUMM), a unified medical multimodal
 model toolkit.
 
+Published site: <https://lixiangcog.github.io/MedUMM-Docs/>
+
 The site has two primary reading paths:
 
 - **Understand MedUMM** — concepts, architecture, workflows, validation levels,
@@ -36,4 +38,3 @@ release evidence take precedence. Documentation updates should name the code
 release they describe.
 
 MedUMM is research software, not a medical device.
-

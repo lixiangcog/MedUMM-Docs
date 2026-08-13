@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from datetime import date
+import os
 
 
 project = "MedUMM"
@@ -50,7 +51,10 @@ html_context = {
     "github_version": "main",
     "conf_py_path": "/docs/",
 }
-html_baseurl = "https://medumm-docs.readthedocs.io/"
+html_baseurl = os.environ.get(
+    "READTHEDOCS_CANONICAL_URL",
+    "https://lixiangcog.github.io/MedUMM-Docs/",
+)
 
 copybutton_prompt_text = r">>> |\.\.\. |\$ "
 copybutton_prompt_is_regexp = True
