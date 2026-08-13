@@ -1,7 +1,7 @@
 # MedUMM 文档
 
 <div class="medumm-hero">
-<strong>MedUMM</strong> 是面向医学统一多模态模型的开放研究平台，覆盖推理、医学评测、报告、资源治理和后训练。本文档对应代码版本 <strong>v1.2.0</strong>。
+<strong>MedUMM</strong> 是面向医学统一多模态模型的开放研究平台，覆盖推理、医学评测、报告、资源治理和后训练。本文档对应代码版本 <strong>v1.3.0</strong>。
 </div>
 
 ::::{grid} 1 2 2 2
@@ -38,7 +38,7 @@
 
 ## 当前版本一览
 
-| 能力 | v1.2.0 状态 | 说明 |
+| 能力 | v1.3.0 状态 | 说明 |
 |---|---|---|
 | 统一推理 | 已实现 | understanding / generation / editing |
 | 医学评测 | 已实现 | audit → generate → score → report |
@@ -46,6 +46,7 @@
 | 后训练 | 已接入 | SFT、DPO/SimPO/ORPO 与 7 条研究路线 |
 | 推理引擎 | 已实机验证 | vLLM、SGLang 双 A800、TP=2 |
 | Emu3.5 CFG | 接口与补丁预检通过 | 完整权重生成仍受资产下载阻塞 |
+| 环境隔离 | 32/32 契约与解析通过 | 每模型独立锁、Docker、Apptainer 与 Modal 镜像 |
 
 :::{warning}
 MedUMM 是研究软件，不是医疗器械。工程验收、基准分数和模型输出均不能替代临床验证、医生判断或合规审批。
@@ -89,6 +90,7 @@ development/add-model
 development/add-dataset-benchmark
 development/post-training
 development/inference-optimization
+development/model-environments
 development/release-evidence
 ```
 
@@ -102,4 +104,3 @@ reference/python-api
 reference/outputs
 reference/glossary
 ```
-
