@@ -1,7 +1,7 @@
 # MedUMM 文档
 
 <div class="medumm-hero">
-<strong>MedUMM</strong> 是面向医学统一多模态模型的开放研究平台，覆盖推理、医学评测、报告、资源治理和后训练。本文档对应代码版本 <strong>v1.5.0</strong>。
+<strong>MedUMM</strong> 是面向医学统一多模态模型的开放研究平台，覆盖推理、医学评测、报告、资源治理和后训练。本文档对应代码版本 <strong>v1.6.0</strong>。
 </div>
 
 ::::{grid} 1 2 2 2
@@ -38,10 +38,10 @@
 
 ## 当前版本一览
 
-| 能力 | v1.5.0 状态 | 说明 |
+| 能力 | v1.6.0 状态 | 说明 |
 |---|---|---|
 | 统一推理 | 已实现 | understanding / generation / editing |
-| 医学评测 | 已实现 | audit → generate → score → report |
+| 医学评测 | 15 个独立 benchmark | 13 个专用医学协议、2 个通用协议；另有 1 个组合 runner |
 | 医学资源目录 | 66 项 | 32 个模型、34 个数据集，验证等级不同 |
 | 后训练 | 已接入 | SFT、DPO/SimPO/ORPO 与 7 条研究路线 |
 | 推理引擎 | 已实机验证 | vLLM、SGLang 双 A800、TP=2 |
@@ -69,6 +69,7 @@ understand/what-is-medumm
 understand/architecture
 understand/workflows
 understand/medical-tasks
+understand/benchmarks
 understand/validation
 ```
 

@@ -25,6 +25,24 @@
 
 除非任务无法拆分，基准应支持 `audit`、`generate`、`score`、`full`。
 
+从 v1.6 起，只有数据资源注册不算完成 benchmark。新增独立 benchmark 还必须固定：
+
+- 兼容的 dataset adapter family；
+- 必需 annotation/choices/candidate scores；
+- 医学 prompt template；
+- 不允许被配置静默替换的版本化 metric suite；
+- 来源、去标识化、媒体、组别或配对完整性审计；
+- 可单独运行的 YAML、测试和报告证据。
+
+先用以下命令检查现有 contract：
+
+```bash
+medumm benchmarks list
+medumm benchmarks show medical_temporal_reasoning
+medumm benchmarks template medical_temporal_reasoning
+medumm benchmarks audit
+```
+
 ## 医学指标原则
 
 - 报告要检查事实、否定、矛盾、关键发现与结构完整性。
@@ -36,4 +54,3 @@
 ## 验收
 
 先以小而平衡的真实切片验证 wiring 和协议覆盖，再运行完整数据。小切片结果必须明确不是质量估计。
-

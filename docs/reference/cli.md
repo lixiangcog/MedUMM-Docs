@@ -8,11 +8,23 @@
 | `medumm catalog` | 查看执行组件 | `--json` |
 | `medumm resources` | 查看/验证医学资源 | `list`, `show`, `template`, `validate` |
 | `medumm models` | 查看、审计和预检真实模型 adapter | `list`, `show`, `audit`, `preflight` |
+| `medumm benchmarks` | 查看和审计独立医学 benchmark | `list`, `show`, `audit`, `template` |
 | `medumm backends` | 查看推理后端 | `--json` |
 | `medumm serve` | 计划或启动 vLLM/SGLang | `--config`, `--plan`, `--set` |
 | `medumm benchmark-inference` | 推理性能基准 | `--config`, `--set` |
 | `medumm merge-predictions` | 严格合并分布式预测 | `--shards`, `--output`, `--expected-count` |
 | `medumm report` | 生成排行榜 | `--scores`, `--output-directory` |
+
+## Benchmark 发现
+
+```bash
+medumm benchmarks list
+medumm benchmarks show medical_grounding
+medumm benchmarks audit
+medumm benchmarks template medical_safety
+```
+
+`audit` 会分别报告 benchmark plugin 数量和 dataset resource 数量，防止把数据目录条目误报为完整评测。
 
 ## 配置覆盖
 

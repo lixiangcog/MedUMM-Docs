@@ -2,11 +2,12 @@
 
 ## 近期：补齐真实医学垂直切片
 
-1. 完成 Emu3.5 固定权重、视觉 tokenizer、FlashAttention 与 CFG 生成验收。
-2. 增加专家标注报告生成切片，验证事实、否定、矛盾和关键发现。
-3. 增加公开定位/测量模型与数据切片。
-4. 在真实临床安全偏好数据上验证至少一条高级后训练路线。
-5. 按 CheXagent、M3D-LaMed、LLaVA-Qwen 与官方源码栈顺序，把剩余 21 款模型升级为 runtime validated。
+1. 为 v1.6 的 13 个专用 benchmark 逐项补齐固定 revision 的真实模型/数据证据。
+2. 完成 Emu3.5 固定权重、视觉 tokenizer、FlashAttention 与 CFG 生成验收。
+3. 增加专家标注报告生成切片，验证事实、否定、矛盾和关键发现。
+4. 增加公开定位/测量模型与数据切片。
+5. 在真实临床安全偏好数据上验证至少一条高级后训练路线。
+6. 按 CheXagent、M3D-LaMed、LLaVA-Qwen 与官方源码栈顺序，把剩余 21 款模型升级为 runtime validated。
 
 ## 中期：从单节点到平台规模
 
