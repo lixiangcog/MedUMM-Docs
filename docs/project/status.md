@@ -1,6 +1,6 @@
 # 当前项目状态
 
-本文档对应 MedUMM `v1.4.0`。
+本文档对应 MedUMM `v1.5.0`。
 
 ## 已建立的平台能力
 
@@ -26,6 +26,7 @@
 | v1.2 | vLLM/SGLang + Qwen2.5-VL-3B，2×A800 | TP=2、连续批处理、性能报告 |
 | v1.3 | 32 个模型环境，Linux/Python 3.10 | 32/32 依赖图解析；160 个生成制品无漂移 |
 | v1.4 | PLIP、QuiltNet、MedVLM-R1、BiomedCLIP，A800 | 4 款固定权重通过公共接口；总计 7/32 GPU 验证 |
+| v1.5 | MedMO-4B/8B、Lingshu-I-8B、Fleming-VL-8B，A800 | 4 款固定权重通过公共接口；总计 11/32 GPU 验证 |
 
 ## v1.2 性能验收
 
@@ -43,4 +44,5 @@
 - 专家标注报告生成、定位和测量真实切片。
 - 临床安全偏好数据上的真实后训练。
 - 更多目录资源从 interface validated 升级为 runtime validated。
-- 为其余 25 个模型逐一完成容器构建、导入和真实权重任务验证。
+- 为其余 21 个模型逐一完成容器构建、导入和真实权重任务验证。
+- MedSigLIP、MedGemma 1.5 4B 和 MAIRA-2 需先满足上游条款与授权访问。

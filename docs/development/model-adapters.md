@@ -8,7 +8,7 @@ MedUMM 将模型支持拆成三个独立结论：
 2. **adapter-defined**：有明确模型类、处理器、提示协议和执行器；
 3. **runtime-validated**：固定真实权重在分配的 GPU 上通过公共接口，并保存证据。
 
-v1.4 的 32 款模型全部达到前两项，7 款达到第三项。其余 25 款仍是后续工程队列，不能把注册名、可下载权重或导入成功写成“跑通”。
+v1.5 的 32 款模型全部达到前两项，11 款达到第三项。其余 21 款仍是后续工程队列，不能把注册名、可下载权重或导入成功写成“跑通”。
 
 ## 查看与预检
 
@@ -23,6 +23,19 @@ medumm models preflight medvlm_r1 \
 ```
 
 预检会检查：模型 revision 是否精确匹配、快照是否存在、受限条款是否已接受、官方源码 checkout 与 commit 是否匹配，以及隔离环境中的必要导入。任一项失败都会返回非就绪状态。
+
+## v1.5 新增真实运行
+
+最终 Slurm 作业 `437697` 在单张 NVIDIA A800-SXM4-80GB 上完成，退出码 0。四款模型使用独立 Python 3.10 环境和固定权重，通过同一个 `medumm infer` 公共接口。
+
+| 模型 | 执行器 | Transformers | 推理时间 | 峰值显存 |
+|---|---|---:|---:|---:|
+| MedMO-4B | Qwen3-VL chat | 4.57.1 | 938.11 ms | 8524.51 MiB |
+| MedMO-8B | Qwen3-VL chat | 4.57.1 | 1002.42 ms | 17246.90 MiB |
+| Lingshu-I-8B | native InternVL Transformers | 4.52.4 | 4260.66 ms | 15846.52 MiB |
+| Fleming-VL-8B | pinned InternVL chat | 4.46.0 | 4298.79 ms | 15286.65 MiB |
+
+首次作业 `437692` 暴露了 Lingshu-I 图像张量 `float32` 与视觉塔 `bfloat16` 不匹配；适配器仅转换浮点输入精度、保留整数 token 类型后，第二次完整作业通过。MedSigLIP、MedGemma 1.5 4B 与 MAIRA-2 的访问探针均明确返回上游条款或授权 token 阻塞，因此没有升级为 runtime validated。
 
 ## v1.4 新增真实运行
 
@@ -47,4 +60,4 @@ medumm models preflight medvlm_r1 \
 
 当前集群计算节点没有外部 DNS。因此固定权重和依赖应在有网络的登录/构建节点准备，A800 作业只读取本地资产并设置 Hugging Face 离线模式。最终验证器要求每条结果具备正确模型名、固定 revision、显式 executor、CUDA 设备、相同 Slurm job ID、非空输出和实测延迟。
 
-机器可读证据位于 MedUMM 代码仓库的 `docs/results/v1.4-real-model-adapters.json`。下一批优先验证 CheXagent、Fleming/InternVL、MedGemma、M3D-LaMed 和一款 LLaVA-Qwen 模型，再进入 Flamingo、RadFM、VILA、XrayGPT 及多 GPU 大模型。
+v1.4 和 v1.5 的机器可读证据分别位于 MedUMM 代码仓库的 `docs/results/v1.4-real-model-adapters.json` 与 `docs/results/v1.5-real-model-adapters.json`。下一批优先验证 CheXagent、M3D-LaMed 和一款 LLaVA-Qwen 模型，再进入 Flamingo、RadFM、VILA、XrayGPT 及多 GPU 大模型；受限模型只有在完成上游授权后才进入运行队列。

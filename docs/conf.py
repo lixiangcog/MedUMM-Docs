@@ -7,8 +7,8 @@ import os
 project = "MedUMM"
 author = "MedUMM contributors"
 copyright = f"{date.today().year}, {author}"
-release = "1.2.0"
-version = "1.2"
+release = "1.5.0"
+version = "1.5"
 
 extensions = [
     "myst_parser",

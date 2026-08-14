@@ -32,7 +32,7 @@ fallback.
 
 ## Source of truth
 
-Platform behavior and release evidence are verified against MedUMM `v1.4.0`.
+Platform behavior and release evidence are verified against MedUMM `v1.5.0`.
 When code and prose differ, the pinned MedUMM source and machine-readable
 release evidence take precedence. Documentation updates should name the code
 release they describe.
