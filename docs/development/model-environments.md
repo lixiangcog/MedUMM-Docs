@@ -44,7 +44,7 @@ sbatch --export=ALL,MODEL_NAME=lingshu_7b \
 | import validated | 隔离环境中的核心模块可以导入 |
 | runtime validated | 固定权重完成真实任务并保存证据 |
 
-目前 32 个模型均通过前两级。已有历史真实证据的 LLaVA-Med、Lingshu-7B 和 PubMedCLIP 保持 runtime validated；其余 29 个不能因为“已经有 Dockerfile”就宣称跑通。
+目前 32 个模型均通过前两级。LLaVA-Med、Lingshu-7B、PubMedCLIP、PLIP、QuiltNet、MedVLM-R1 和 BiomedCLIP 共 7 款具有固定权重 GPU 证据；其余 25 个不能因为“已经有 Dockerfile”就宣称跑通。
 
 ## 服务器边界
 

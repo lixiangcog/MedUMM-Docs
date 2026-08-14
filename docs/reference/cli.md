@@ -7,6 +7,7 @@
 | `medumm post-train` / `train` | 后训练或计划 | `--config`, `--plan`, `--list-methods`, `--template` |
 | `medumm catalog` | 查看执行组件 | `--json` |
 | `medumm resources` | 查看/验证医学资源 | `list`, `show`, `template`, `validate` |
+| `medumm models` | 查看、审计和预检真实模型 adapter | `list`, `show`, `audit`, `preflight` |
 | `medumm backends` | 查看推理后端 | `--json` |
 | `medumm serve` | 计划或启动 vLLM/SGLang | `--config`, `--plan`, `--set` |
 | `medumm benchmark-inference` | 推理性能基准 | `--config`, `--set` |
@@ -26,4 +27,3 @@ medumm infer --config run.yaml \
 ## 退出行为
 
 配置错误、治理门禁、子进程失败、缺少检查点或预测合并不一致应返回非零退出码，以便 Slurm 和 CI 正确判定失败。
-
